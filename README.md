@@ -1,54 +1,60 @@
-# eink dotfiles (Hyprland + Quickshell)
+# hyprConfig: E-ink Dotfiles for Hyprland and Quickshell
 
-This repo contains a small set of dotfiles that recreates the centered “pill” top bar from `./inspo/` using **Quickshell**, with **dynamic colors generated from your wallpaper** (via `matugen`).
+Hyprland dotfiles configuration that builds a centered pill top bar using Quickshell, featuring dynamic Material You color palettes generated directly from your active wallpaper via matugen.
 
-## What you get
+Maintained by Dev Borah ([@bitzzdev](https://github.com/bitzzdev)).
 
-- Quickshell top bar (time + workspaces + volume + Wi‑Fi SSID + battery pill)
-  - Click the time to toggle a calendar popup
-- Dynamic colors driven by wallpaper (`matugen image ... -j hex`)
-- Hyprland keybinds:
-  - `SUPER + T` → `kitty`
-  - `SUPER + SHIFT + T` → OCR selected screen region to clipboard
-  - `SUPER + Q` → close active window
-  - `SUPER + E` → `nautilus`
+## Features
 
-## Install (stow-style layout)
+- Quickshell top bar: time indicator, workspaces switcher, audio volume, WiFi SSID, and battery status pill.
+- Calendar popover: click time indicator to toggle the interactive monthly calendar.
+- Dynamic color theming: wallpaper palette extracted in real time via `matugen image ... -j hex`.
+- Hyprland key bindings:
+  - `SUPER + T`: launch kitty terminal
+  - `SUPER + SHIFT + T`: run OCR on selected screen region and copy text to clipboard
+  - `SUPER + Q`: close focused window
+  - `SUPER + E`: launch nautilus file manager
 
-These files are laid out to be used with `stow`:
+## Installation
 
-### One-shot (Arch)
+The repository is structured for deployment using GNU `stow`.
+
+### One-command installer (Arch Linux)
 
 ```bash
 chmod +x ./install-arch.sh
 ./install-arch.sh
 ```
 
-### Manual
+### Manual installation
 
 ```bash
-cd /path/to/this/repo
+cd /path/to/hyprConfig
 stow -t "$HOME" dotfiles
-```
-
-Make the helper script executable:
-
-```bash
 chmod +x ~/.local/bin/eink-wallpaper
 ```
 
-## Usage
+## Wallpaper and theme commands
 
-Set a wallpaper (also regenerates theme):
+To change wallpaper and automatically regenerate theme colors:
 
 ```bash
 eink-wallpaper /path/to/wallpaper.png
 ```
 
-Restore last wallpaper on login (Hyprland `exec-once` calls this):
+To restore the saved wallpaper on graphical session start (invoked automatically via Hyprland `exec-once`):
 
 ```bash
 eink-wallpaper --restore
 ```
 
-# hyprconfig
+## Connect
+
+- Creator: [Dev Borah](https://bitz.is-a.dev)
+- GitHub: [bitzzdev](https://github.com/bitzzdev)
+- Ko-fi: [bitzzdev](https://ko-fi.com/bitzzdev)
+- Reddit: [u/bitzzdev](https://www.reddit.com/user/bitzzdev/)
+
+## License
+
+MIT License. Free to use, adapt, and share.
